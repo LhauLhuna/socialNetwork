@@ -12,5 +12,8 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-//Route::post('statuses', 'StatusesController')->name('statuses.store');
+Route::get('/', function() {
+	return view('welcome');
+})->name('home');
+Route::post('statuses', 'StatusesController@store')->name('statuses.store');
+Route::auth();
